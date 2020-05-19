@@ -6,7 +6,8 @@ const routes = express.Router();
 
 routes.post('/comidas', async (request, response) => {
     const { name, descricao, img, ingredientes, video }  = request.body;
-
+    
+    console.log(ingredientes)
     await connection('comidas').insert({
         name,
         descricao,
@@ -14,6 +15,8 @@ routes.post('/comidas', async (request, response) => {
         ingredientes,
         video
     })
+    
+    
     return response.json({retorno: 'connection successful'})
 })
 

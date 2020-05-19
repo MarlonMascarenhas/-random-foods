@@ -5,7 +5,7 @@ exports.up = function(knex) {
       table.string('name').notNullable();
       table.text('descricao').notNullable();
       table.string('img').notNullable();
-      table.string('ingredientes').notNullable();
+      table.json('ingredientes');
       table.text('video');
   })
 };

@@ -4,10 +4,17 @@ const connection = require('./database/connection');
 
 const routes = express.Router();
 
-routes.post('/comidas', async (request, response) => {
-    const { name, descricao, img, ingredientes, video }  = request.body;
+routes.get('/comidas', async(request, response) => {
+    const comidas = await connection('comidas').select('*')
     
-    console.log(ingredientes)
+    return response.json(comidas);
+})
+
+routes.post('/comidas', async (request, response) => {
+    const { name, descricao, img, ingredients, video }  = request.body;
+    
+    var ingredientes = JSON.stringify(ingredients);
+    
     await connection('comidas').insert({
         name,
         descricao,

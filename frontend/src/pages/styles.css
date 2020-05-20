@@ -21,3 +21,29 @@
     border-color: #007bff;
     color: #fff; 
 }
+
+.imagemFood {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.imagemFood .imgFood{
+    flex-direction: column;
+}
+
+.imagemFood .imgFood img{
+    height: 318px;
+    width: 318px;
+}
+
+.imagemFood .textFood {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    width: 600px;
+    text-align: justify;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 19px;
+}

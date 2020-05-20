@@ -22,5 +22,6 @@ module.exports = {
         const comidas = await connection('comidas').select('*')
         
         return response.json(comidas);
-    }
+    },
+
 }

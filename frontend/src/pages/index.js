@@ -22,8 +22,8 @@ export default function HomePage() {
             <div className="imagemFood">
                 <div className="imgFood">
                     <img src={imgTemp} alt="hello world" /> 
-                    <p>Category: Pasta</p>
-                    <p>Area: Italian</p>
+                    <p><b>Category:</b> Pasta</p>
+                    <p><b>Area:</b> Italian</p>
                 </div>
                 <div className="textFood">
                     <h2>Pilchard puttanesca</h2>
@@ -34,6 +34,17 @@ export default function HomePage() {
                         Toss everything together well, then divide between plates and serve, scattered with Parmesan.
                     </spam>
                 </div>
+            </div>
+
+            <div className="ingredientes">
+            <ul>
+                <li>Plain chocolate - 250g</li>
+                <li>Butter - 175g</li>
+                <li>Milk - 2 tablespoons</li>
+                <li>Eggs - 5</li>
+                <li>Granulated Sugar - 175g</li>
+                <li>Flour - 125g</li>
+            </ul>
             </div>
         </div>
     )

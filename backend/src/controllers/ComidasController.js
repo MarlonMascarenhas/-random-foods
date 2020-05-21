@@ -4,7 +4,7 @@ module.exports = {
     async create(request, response) {
         const { name, descricao, img, ingredients, video }  = request.body;
         
-        var ingredientes = JSON.stringify(ingredients);
+        var ingredientes = ingredients.toString();
         
         await connection('comidas').insert({
             name,

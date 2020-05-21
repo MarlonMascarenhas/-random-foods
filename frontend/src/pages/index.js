@@ -15,7 +15,7 @@ export default function HomePage() {
         const response = await api.get('randomSelection');
         setBusc(true)
         setFood(response.data[0]);
-        setIngredientes(JSON.parse(response.data[0].ingredientes))
+        setIngredientes(response.data[0].ingredientes.split(","))
         console.log(ingredientes)
     }
 
@@ -40,21 +40,17 @@ export default function HomePage() {
             </div>
             
 
-            <div className="ingredientes">
+            <div className="ingredientes" style = {{display: busc ? 'block' : 'none'}}>
                 <h3>Ingredientes</h3>
                 <ul>
-                    <li>Plain chocolate - 250g</li>
-                    <li>Butter - 175g</li>
-                    <li>Milk - 2 tablespoons</li>
-                    <li>Eggs - 5</li>
-                    <li>Granulated Sugar - 175g</li>
-                    <li>Flour - 125g</li>
+                    {ingredientes.map(s => (<li>{s}</li>))}
+                    
                 </ul>
             </div>
-            <div className="videoReceita" style = {{display: busc ? 'flex' : 'none'}}>
+            <div className="videoReceita" style = {{display: busc ? 'block' : 'none'}}>
                 <h3>Video de Receita</h3>
                 <div className="videoWrapper">
-                    <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
+                    <Iframe url={food.video}
                         width="960px"
                         height="565px"
                         id="myId"

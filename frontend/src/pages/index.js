@@ -8,13 +8,15 @@ import './styles.css';
 
 export default function HomePage() {
     const [food, setFood] = useState([]);
+    const [ingredientes, setIngredientes] = useState([]);
     const [busc, setBusc] = useState(false);
 
     async function randomFood(){
         const response = await api.get('randomSelection');
         setBusc(true)
         setFood(response.data[0]);
-        console.log(response.data[0])
+        setIngredientes(JSON.parse(response.data[0].ingredientes))
+        console.log(ingredientes)
     }
 
     return (
@@ -49,10 +51,10 @@ export default function HomePage() {
                     <li>Flour - 125g</li>
                 </ul>
             </div>
-            <div className="videoReceita">
+            <div className="videoReceita" style = {{display: busc ? 'flex' : 'none'}}>
                 <h3>Video de Receita</h3>
                 <div className="videoWrapper">
-                    <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
+                    <Iframe url="https://youtu.be/WFvj71RZYPc"
                         width="960px"
                         height="565px"
                         id="myId"

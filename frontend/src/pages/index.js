@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import Iframe from 'react-iframe'
 
 import './styles.css';
 import imgTemp from './assets/imgTemp.jpg';
@@ -37,15 +38,28 @@ export default function HomePage() {
             </div>
 
             <div className="ingredientes">
-            <ul>
-                <li>Plain chocolate - 250g</li>
-                <li>Butter - 175g</li>
-                <li>Milk - 2 tablespoons</li>
-                <li>Eggs - 5</li>
-                <li>Granulated Sugar - 175g</li>
-                <li>Flour - 125g</li>
-            </ul>
+                <h3>Ingredientes</h3>
+                <ul>
+                    <li>Plain chocolate - 250g</li>
+                    <li>Butter - 175g</li>
+                    <li>Milk - 2 tablespoons</li>
+                    <li>Eggs - 5</li>
+                    <li>Granulated Sugar - 175g</li>
+                    <li>Flour - 125g</li>
+                </ul>
             </div>
+            <div className="videoReceita">
+                <h3>Video de Receita</h3>
+                <div className="videoWrapper">
+                    <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
+                        width="960px"
+                        height="565px"
+                        id="myId"
+                        className="myClassname"
+                        display="initial"
+                        position="relative"/>
+                    </div>
+                </div>
         </div>
     )
 }

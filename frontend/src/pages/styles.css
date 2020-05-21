@@ -24,7 +24,6 @@
 
 .imagemFood {
     display: flex;
-    justify-content: center;
     margin-top: 30px;
 }
 
@@ -35,6 +34,7 @@
 .imagemFood .imgFood img{
     height: 318px;
     width: 318px;
+    margin-bottom: 10px;
 }
 
 .imagemFood .textFood {
@@ -46,4 +46,10 @@
     justify-content: flex-start;
     align-items: flex-start;
     margin-left: 19px;
+}
+.videoReceita .videoWrapper{
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
 }

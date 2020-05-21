@@ -14,7 +14,7 @@ export default function HomePage() {
         const response = await api.get('randomSelection');
         setBusc(true)
         setFood(response.data[0]);
-
+        console.log(response.data[0])
     }
 
     return (
@@ -29,9 +29,7 @@ export default function HomePage() {
             
             <div className="imagemFood" style = {{display: busc ? 'flex' : 'none'}} >
                 <div className="imgFood">
-                    <img src={food.img} alt="hello world" /> 
-                    <p><b>Category:</b> Pasta</p>
-                    <p><b>Area:</b> Italian</p>
+                    <img src={food.img} alt="hello world" />
                 </div>
                 <div className="textFood">
                 <h2>{food.name}</h2>

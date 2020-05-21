@@ -54,7 +54,7 @@ export default function HomePage() {
             <div className="videoReceita" style = {{display: busc ? 'flex' : 'none'}}>
                 <h3>Video de Receita</h3>
                 <div className="videoWrapper">
-                    <Iframe url="https://youtu.be/WFvj71RZYPc"
+                    <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
                         width="960px"
                         height="565px"
                         id="myId"

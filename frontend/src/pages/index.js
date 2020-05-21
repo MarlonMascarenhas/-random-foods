@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Iframe from 'react-iframe'
+import api from '../services/api';
 
 import './styles.css';
-import imgTemp from './assets/imgTemp.jpg';
+
 
 export default function HomePage() {
-    function randomFood(){
-        console.log('hello world');
+    const [food, setFood] = useState([]);
+    const [busc, setBusc] = useState(false);
+
+    async function randomFood(){
+        const response = await api.get('randomSelection');
+        setBusc(true)
+        setFood(response.data[0]);
+
     }
 
     return (
@@ -20,22 +27,18 @@ export default function HomePage() {
                 </div>
             </div>
             
-            <div className="imagemFood">
+            <div className="imagemFood" style = {{display: busc ? 'flex' : 'none'}} >
                 <div className="imgFood">
-                    <img src={imgTemp} alt="hello world" /> 
+                    <img src={food.img} alt="hello world" /> 
                     <p><b>Category:</b> Pasta</p>
                     <p><b>Area:</b> Italian</p>
                 </div>
                 <div className="textFood">
-                    <h2>Pilchard puttanesca</h2>
-                    <spam>Cook the pasta following pack instructions. Heat the oil in a non-stick frying pan and cook the onion, 
-                        garlic and chilli for 3-4 mins to soften. Stir in the tomato purée and cook for 1 min, then add the pilchards with their sauce. 
-                        Cook, breaking up the fish with a wooden spoon, then add the olives and continue to cook for a few more mins. Drain the pasta and 
-                        add to the pan with 2-3 tbsp of the cooking water.
-                        Toss everything together well, then divide between plates and serve, scattered with Parmesan.
-                    </spam>
+                <h2>{food.name}</h2>
+                    <spam>{food.descricao}</spam>
                 </div>
             </div>
+            
 
             <div className="ingredientes">
                 <h3>Ingredientes</h3>

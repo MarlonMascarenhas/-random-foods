@@ -1,8 +1,11 @@
 # -random-foods
 
-A proposta para esse site é aprendizado em react e nodeJS.
+Tecnologias Utilizadas: React, nodeJs e knex
 
-Este site tem o intuito de quando você esta cansado de escolher as comidas no seu app, você entra no site e ele 
-escolhe uma comida aleatoria para você, te esplica como fazer ou te fala onde comprar.
+intuito do projeto: Criar um site que consome uma api simples.
 
-É um site simples que foi feito para aprendizado.
+API: feita em nodeJS, ela possui um banco de dados, e tem os metodos de insert e busca somente, banco de dados feito em knex + sqlite e com comunicação padronizada em Json.
+
+Frontend: feito em React.
+
+proposta: um a site que oferece refeições randomicas para o usuario, para quando ele está cansado de ter que escolher e ficar indeciso 
